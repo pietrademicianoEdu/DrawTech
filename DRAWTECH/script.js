@@ -23,17 +23,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const createRoomConfirmButton = document.getElementById('create-room-confirm-button');
 
 
+    // --- Funções para Salvamento e Carregamento Local ---
+
+    // Salva um dado no localStorage
+    const saveData = (key, value) => {
+        localStorage.setItem(key, JSON.stringify(value));
+        console.log(`Dados salvos localmente: ${key} = ${JSON.stringify(value)}`);
+    };
+
+    // Carrega um dado do localStorage
+    const loadData = (key) => {
+        const data = localStorage.getItem(key);
+        return data ? JSON.parse(data) : null;
+    };
+
     // --- Função para controlar qual tela é exibida ---
     const showScreen = (screenToShow) => {
         // Primeiro, esconde todas as telas
         initialScreen.classList.add('hidden');
         lobbyScreen.classList.add('hidden');
         createRoomScreen.classList.add('hidden'); 
-        // Adicionar futuras telas aqui (ex: gameScreen.classList.add('hidden');)
         
         // Depois, mostra apenas a tela desejada
         screenToShow.classList.remove('hidden');
     };
+
+    // --- Carregar o nickname salvo ao iniciar a página ---
+    const savedNickname = loadData('drawtech_nickname');
+    if (savedNickname) {
+        nicknameInput.value = savedNickname;
+        console.log(`Nickname carregado: ${savedNickname}`);
+    }
+
 
     // --- Lógica dos Botões ---
 
@@ -42,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const nickname = nicknameInput.value.trim();
 
         if (nickname) {
+            // Salva o nickname no localStorage
+            saveData('drawtech_nickname', nickname);
             console.log(`Jogador "${nickname}" entrou no lobby.`);
             
             // Atualiza a mensagem de boas-vindas na tela de lobby
@@ -59,10 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
     createRoomButtonLobby.addEventListener('click', () => {
         console.log('Botão "CRIAR SALA" (Lobby) clicado. Indo para a tela de criação.');
         showScreen(createRoomScreen);
-        // Opcional: Limpar campos da tela de criação ao entrar nela
-        roomNameInput.value = '';
-        playersSelect.value = '4'; // Valor padrão
-        roundsSelect.value = '10'; // Valor padrão
+        // Opcional: Limpar campos da tela de criação ao entrar nela ou carregar configurações salvas
+        // roomNameInput.value = '';
+        // playersSelect.value = '4'; // Valor padrão
+        // roundsSelect.value = '10'; // Valor padrão
+
+        // Carregar últimas configurações salvas (se existirem)
+        const savedRoomConfig = loadData('drawtech_last_room_config');
+        if (savedRoomConfig) {
+            roomNameInput.value = savedRoomConfig.name || '';
+            playersSelect.value = savedRoomConfig.players || '4';
+            roundsSelect.value = savedRoomConfig.rounds || '10';
+            console.log('Últimas configurações de sala carregadas.');
+        } else {
+            roomNameInput.value = '';
+            playersSelect.value = '4'; // Valor padrão
+            roundsSelect.value = '10'; // Valor padrão
+            console.log('Nenhuma configuração de sala salva encontrada. Usando padrões.');
+        }
     });
 
     // Evento do botão "VOLTAR" na TELA DE CRIAÇÃO DE SALA
@@ -81,6 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Sala "${roomName}" configurada com ${numPlayers} jogadores e ${numRounds} rodadas.`);
             alert(`Sua sala "${roomName}" foi configurada.\nAguardando backend para criar e compartilhar o código da sala.`);
             
+            // Salva as configurações da sala localmente
+            const roomConfig = {
+                name: roomName,
+                players: numPlayers,
+                rounds: numRounds
+            };
+            saveData('drawtech_last_room_config', roomConfig);
+            console.log('Configurações da sala salvas localmente.');
+
             // Após "criar" a sala (apenas configurada no frontend), você pode decidir para onde ir.
             // Por enquanto, vamos voltar para o lobby.
             showScreen(lobbyScreen);
@@ -102,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (initialScreen.classList.contains('hidden')) { 
             console.log('Ícone Drawtech clicado, voltando para a tela inicial.');
             showScreen(initialScreen); 
-            nicknameInput.value = ''; // Limpa o campo de nome ao voltar
+            // Não limpa o nicknameInput.value aqui, para que o salvo seja recarregado
         } else {
             console.log('Já estamos na tela inicial.');
         }
