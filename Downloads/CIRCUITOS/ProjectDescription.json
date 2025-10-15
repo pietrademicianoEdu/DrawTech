@@ -1,0 +1,198 @@
+{
+  "ProjectName": "CIRCUITOS",
+  "DLSVersion_LastSaved": "2.1.6",
+  "DLSVersion_EarliestCompatible": "2.0.0",
+  "CreationTime": "2025-04-22T19:45:00.701-03:00",
+  "LastSaveTime": "2025-06-16T16:27:46.233-03:00",
+  "Prefs_MainPinNamesDisplayMode": 0,
+  "Prefs_ChipPinNamesDisplayMode": 1,
+  "Prefs_GridDisplayMode": 1,
+  "Prefs_Snapping": 0,
+  "Prefs_StraightWires": 0,
+  "Prefs_SimPaused": false,
+  "Prefs_SimTargetStepsPerSecond": 1000,
+  "Prefs_SimStepsPerClockTick": 250,
+  "AllCustomChipNames":[
+    "NOT",
+    "OR",
+    "AND",
+    "NOR",
+    "XOR",
+    "XNOR",
+    "HALF ADDER",
+    "Full-Adder",
+    "2-bit",
+    "4-BT",
+    "8-BIT",
+    "16- BIT",
+    "HALF-SUB",
+    "FULL-SUB",
+    "4-AND",
+    "8-OR",
+    "MUX",
+    "2-BIT SUB",
+    "4-BIT SUB",
+    "8-BIT SUB",
+    "MULTDIVBIN",
+    "3-And",
+    "decoder-8",
+    "multi 8-1",
+    "Dc 3-8",
+    "And bit",
+    "OR Bit",
+    "XOR Bit",
+    "Half Ader",
+    "8-BIT ADDER",
+    "2bit adder",
+    "4bit adder",
+    "8bit Adder",
+    "Ula"
+  ],
+  "StarredList":[
+    {
+      "Name":"IN/OUT",
+      "IsCollection":true
+    },
+    {
+      "Name":"LOGIC GATES",
+      "IsCollection":true
+    },
+    {
+      "Name":"MERGE/SPLIT",
+      "IsCollection":true
+    },
+    {
+      "Name":"GATE COM",
+      "IsCollection":true
+    },
+    {
+      "Name":"BIT ADDER",
+      "IsCollection":true
+    },
+    {
+      "Name":"SUBTRACTOR",
+      "IsCollection":true
+    },
+    {
+      "Name":"MUX",
+      "IsCollection":false
+    },
+    {
+      "Name":"MULTDIVBIN",
+      "IsCollection":false
+    },
+    {
+      "Name":"3-And",
+      "IsCollection":false
+    },
+    {
+      "Name":"decoder-8",
+      "IsCollection":false
+    },
+    {
+      "Name":"multi 8-1",
+      "IsCollection":false
+    },
+    {
+      "Name":"Dc 3-8",
+      "IsCollection":false
+    },
+    {
+      "Name":"And bit",
+      "IsCollection":false
+    },
+    {
+      "Name":"OR Bit",
+      "IsCollection":false
+    },
+    {
+      "Name":"XOR Bit",
+      "IsCollection":false
+    },
+    {
+      "Name":"Half Ader",
+      "IsCollection":false
+    },
+    {
+      "Name":"Full-Adder",
+      "IsCollection":false
+    },
+    {
+      "Name":"8-BIT ADDER",
+      "IsCollection":false
+    },
+    {
+      "Name":"2bit adder",
+      "IsCollection":false
+    },
+    {
+      "Name":"4bit adder",
+      "IsCollection":false
+    },
+    {
+      "Name":"8bit Adder",
+      "IsCollection":false
+    },
+    {
+      "Name":"Ula",
+      "IsCollection":false
+    }
+  ],
+  "ChipCollections":[
+    {
+      "Chips":["CLOCK","KEY","3-STATE BUFFER"],
+      "IsToggledOpen":true,
+      "Name":"BASIC"
+    },
+    {
+      "Chips":["IN-1","IN-4","IN-8","OUT-1","OUT-4","OUT-8"],
+      "IsToggledOpen":true,
+      "Name":"IN/OUT"
+    },
+    {
+      "Chips":["1-4BIT","1-8BIT","4-8BIT","4-1BIT","8-4BIT","8-1BIT"],
+      "IsToggledOpen":true,
+      "Name":"MERGE/SPLIT"
+    },
+    {
+      "Chips":["BUS-1","BUS-4","BUS-8"],
+      "IsToggledOpen":true,
+      "Name":"BUS"
+    },
+    {
+      "Chips":["7-SEGMENT","DOT DISPLAY","RGB DISPLAY"],
+      "IsToggledOpen":true,
+      "Name":"DISPLAY"
+    },
+    {
+      "Chips":["ROM 256×16"],
+      "IsToggledOpen":true,
+      "Name":"MEMORY"
+    },
+    {
+      "Chips":["PULSE","LED","Full-Adder","8-BIT","MUX","MULTDIVBIN","3-And","decoder-8","multi 8-1","Dc 3-8","And bit","OR Bit","XOR Bit","BUZZER","Half Ader","8-BIT ADDER","2bit adder","4bit adder","8bit Adder","Ula"],
+      "IsToggledOpen":true,
+      "Name":"OTHER"
+    },
+    {
+      "Chips":["AND","NOT","NAND","OR","NOR","XOR","XNOR","HALF ADDER"],
+      "IsToggledOpen":true,
+      "Name":"LOGIC GATES"
+    },
+    {
+      "Chips":["HALF-SUB","FULL-SUB","2-BIT SUB","4-BIT SUB","8-BIT SUB"],
+      "IsToggledOpen":true,
+      "Name":"SUBTRACTOR"
+    },
+    {
+      "Chips":["4-AND","8-OR"],
+      "IsToggledOpen":true,
+      "Name":"GATE COM"
+    },
+    {
+      "Chips":["16- BIT","2-bit","4-BT"],
+      "IsToggledOpen":false,
+      "Name":"BIT ADDER"
+    }
+  ]
+}

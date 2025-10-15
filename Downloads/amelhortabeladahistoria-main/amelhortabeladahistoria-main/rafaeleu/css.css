@@ -1,0 +1,48 @@
+body {
+    background-image: url(./ceu.jpg);
+    background-size: cover;
+
+}
+table {
+    margin: 120px;
+}
+
+th, td {
+    rotate: 1deg;
+    background-size: contain;
+    background-image: url(./cachorro.jpeg);
+    border-spacing: 30px;
+    border-radius: 1000px;
+    font-family: Helvetica;
+    font-size: 20px;
+    height: 50px;
+    width: 900px;
+    padding: 15px;
+    color: rgb(255, 0, 0);
+    text-align: center;
+    box-shadow: rgb(255, 255, 255) 0px 0px 10px;
+}
+
+th {
+    rotate: -2deg;
+    background-color: #ff0000;
+    font-style: italic;
+}
+
+td {
+    background-color: #ffee00;
+}
+
+tfoot {
+    rotate: 3deg;
+}
+
+caption {
+    font-size: 100px;
+    color: #ff0000;
+    font-family: 'Times New Roman', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: rgb(255, 0, 0) 0px 0px 0px;
+}

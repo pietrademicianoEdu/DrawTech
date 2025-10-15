@@ -1,0 +1,270 @@
+/* Resets e Configurações Globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFE4E1; /* Fundo rosa */
+    font-family: 'Press Start 2P', cursive;
+    color: #000;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Classe para esconder telas */
+.hidden {
+    display: none !important; /* !important garante que a tela fique escondida */
+}
+
+/* Ícones da Área de Trabalho (Esquerda) */
+.desktop-icons {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #2c2c2c;
+    font-size: 12px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #2c2c2c;
+    font-size: 12px;
+}
+
+.icon-image {
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 5px;
+}
+
+.monitor-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M20 18H4V6h16v12zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><path d="M12 20h-4v2h12v-2h-4z"/></svg>');
+}
+
+.players-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>');
+}
+
+/* Relógio (Canto Superior Direito) */
+.clock {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #C0C0C0;
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-bottom-color: #FFF;
+    border-right-color: #FFF;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Estilo da Janela Principal */
+.window {
+    width: 650px;
+    height: 520px; 
+    background-color: #C0C0C0;
+    border: 2px solid;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+    border-bottom-color: #404040;
+    border-right-color: #404040;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.title-bar {
+    background-color: #000080;
+    color: #FFF;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+}
+.main-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px; 
+}
+.sub-title {
+    font-size: 12px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 3px;
+}
+
+.window-controls span {
+    width: 18px;
+    height: 18px;
+    background-color: #C0C0C0;
+    border: 1px solid;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+    border-bottom-color: #404040;
+    border-right-color: #404040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.close-btn {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.window-body {
+    padding: 20px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.game-title {
+    background-color: #000;
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #FFF;
+}
+
+/* Estilos da Tela Inicial */
+.subtitle {
+    font-size: 14px;
+}
+
+#nickname-input {
+    background-color: #FFF;
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-bottom-color: #FFF;
+    border-right-color: #FFF;
+    padding: 8px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+}
+
+#enter-button {
+    background-color: #C0C0C0;
+    border: 2px solid;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+    border-bottom-color: #404040;
+    border-right-color: #404040;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Estilos da Tela de Lobby */
+#welcome-message {
+    font-size: 16px;       
+}
+.description {
+    font-size: 16px;       
+    line-height: 1.5;      
+}
+
+.menu-button {
+    background-color: #C0C0C0;
+    border: 2px solid;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+    border-bottom-color: #404040;
+    border-right-color: #404040;
+    padding: 16px;         
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;         
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-button:active, #enter-button:active {
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-bottom-color: #FFF;
+    border-right-color: #FFF;
+}
+
+.info-box {
+    background-color: #D3EAD3;
+    border: 1px solid #008000;
+    padding: 10px;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* Barra de Tarefas (Inferior) */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #C0C0C0;
+    border-top: 2px solid #FFF;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.start-button {
+    background-color: #C0C0C0;
+    border: 2px solid;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+    border-bottom-color: #404040;
+    border-right-color: #404040;
+    padding: 5px 15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.version-info {
+    font-size: 12px;
+    padding-right: 10px;
+}
