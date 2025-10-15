@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrawTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <aside class="desktop-icons">
+        <button class="icon-button" id="drawtech-icon-button">
+            <div class="icon-image monitor-icon"></div>
+            <span>Drawtech</span>
+        </button>
+        <div class="icon">
+            <div class="icon-image players-icon"></div>
+            <span>Players</span>
+        </div>
+    </aside>
+    <div class="clock">14:30</div>
+    <footer class="taskbar">
+        <button class="start-button">Start</button>
+        <div class="version-info">DrawTech v1.0</div>
+    </footer>
+
+    <main class="window" id="initial-screen">
+        <div class="title-bar">
+            <div class="title-container">
+                <span class="main-title">DrawTech</span>
+                <span class="sub-title">Entrar</span>
+            </div>
+            <div class="window-controls">
+                <span>_</span><span>☐</span><span class="close-btn">X</span>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="game-title">DrawTech</div>
+            <p class="subtitle">> História da Computação</p>
+            <label for="nickname-input" class="nickname-label">> Digite seu nome:</label>
+            <input type="text" id="nickname-input" placeholder="Ex: Ada_Lovelace">
+            <button id="enter-button">ENTRAR ></button>
+            <div class="info-box">
+                <strong>INFO:</strong> Você entrará como jogador anônimo. Escolha um nome criativo!
+            </div>
+        </div>
+    </main>
+
+    <main class="window hidden" id="lobby-screen">
+        <div class="title-bar">
+            <div class="title-container">
+                <span class="main-title">DrawTech</span>
+                <span class="sub-title">História da Computação</span>
+            </div>
+            <div class="window-controls">
+                <span>_</span><span>☐</span><span class="close-btn">X</span>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="game-title">DrawTech</div>
+            <p id="welcome-message">> Bem-vindo, JOGADOR!</p>
+            <p class="description">> Desenhe e adivinhe termos da História da Computação</p>
+            
+            <button class="menu-button" id="create-room-button-lobby">> CRIAR SALA</button>
+            <button class="menu-button" id="join-room-button">> ENTRAR EM UMA SALA</button>
+
+            <div class="info-box">
+                <strong>INFO:</strong> Aprenda sobre ENIAC, Ada Lovelace, Mouse e muito mais!
+            </div>
+        </div>
+    </main>
+
+    <main class="window hidden" id="create-room-screen">
+        <div class="title-bar">
+            <div class="title-container">
+                <span class="main-title">DrawTech</span>
+                <span class="sub-title">Criar Sala</span>
+            </div>
+            <div class="window-controls">
+                <span>_</span><span>☐</span><span class="close-btn">X</span>
+            </div>
+        </div>
+        <div class="window-body create-room-body">
+            <div class="game-title">CRIAR NOVA SALA</div>
+            <p class="description-small">Configure sua partida de DrawTech</p>
+            
+            <label for="room-name-input" class="input-label">> Nome da Sala:</label>
+            <input type="text" id="room-name-input" placeholder="Ex: COMP2024">
+
+            <label for="players-select" class="input-label">> Número de Jogadores:</label>
+            <select id="players-select">
+                <option value="4">4 jogadores</option>
+                <option value="2">2 jogadores</option>
+                <option value="3">3 jogadores</option>
+                <option value="5">5 jogadores</option>
+                <option value="6">6 jogadores</option>
+                <option value="8">8 jogadores</option>
+            </select>
+
+            <label for="rounds-select" class="input-label">> Número de Rodadas:</label>
+            <select id="rounds-select">
+                <option value="10">10 rodadas</option>
+                <option value="5">5 rodadas</option>
+                <option value="15">15 rodadas</option>
+                <option value="20">20 rodadas</option>
+            </select>
+
+            <div class="info-box">
+                <strong>INFO:</strong> A funcionalidade de compartilhar a sala estará disponível quando o backend for implementado.
+            </div>
+
+            <div class="button-group">
+                <button class="menu-button" id="back-to-lobby-button">< VOLTAR</button>
+                <button class="menu-button" id="create-room-confirm-button">CRIAR SALA ></button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
